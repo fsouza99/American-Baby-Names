@@ -15,7 +15,7 @@ The idea came from a Datacamp's [article](https://www.datacamp.com/blog/sql-proj
 
 ### Dataset
 
-The dataset was obtained from [Social Security](https://www.ssa.gov/oact/babynames/limits.html) website on March 23, 2024.
+The dataset was obtained from Social Security's [website](https://www.ssa.gov/oact/babynames/limits.html) on March 23, 2024.
 
 The downloaded pack consisted of one text file for every year between 1880 and 2022, presenting a CSV-like layout with 3 columns and no headers:
 

@@ -19,10 +19,10 @@ The dataset was obtained from [Social Security](https://www.ssa.gov/oact/babynam
 
 The downloaded pack consisted of one text file for every year between 1880 and 2022, presenting a CSV-like layout with 3 columns and no headers:
 
-	> Mary,F,7065
-	> Anna,F,2604
-	> Emma,F,2003
-	> ...
+	Mary,F,7065
+	Anna,F,2604
+	Emma,F,2003
+	...
 
 ## Project
 
@@ -44,12 +44,12 @@ Once the data for the study has been defined, we start the database by running *
 
 After accessing the database from root directory, we get into the *sql* folder and run the available scripts in order to create the the database objects:
 
-	american_names=# \cd sql
-	american_names=# \i creation.sql
+	> american_names=# \cd sql
+	> american_names=# \i creation.sql
 	CREATE TYPE
 	CREATE TABLE
 	COPY 104189
-	american_names=# \i analysis.sql
+	> american_names=# \i analysis.sql
 	CREATE FUNCTION
 	CREATE FUNCTION
 	CREATE FUNCTION

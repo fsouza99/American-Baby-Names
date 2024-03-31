@@ -1,7 +1,7 @@
 -- Remember to cast parameters where smallints are necessary.
 
 -- The k most frequent names of a gender.
-CREATE OR REPLACE FUNCTION query_top_names(
+CREATE FUNCTION query_top_names(
 	target_gender gender_symbol) RETURNS TABLE(
 		top_names varchar(15),
 		associated_gender gender_symbol,
@@ -19,7 +19,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- The number of names of a gender used since some year that starts with some letter.
-CREATE OR REPLACE FUNCTION special_start_count(
+CREATE FUNCTION special_start_count(
 	target_gender gender_symbol,
 	start_char char,
 	start_year smallint) RETURNS integer AS $$
@@ -32,7 +32,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- The most common name of each year.
-CREATE OR REPLACE FUNCTION query_annual_leaders(
+CREATE FUNCTION query_annual_leaders(
 	target_gender gender_symbol) RETURNS TABLE(
 		year_of_exercise smallint,
 		commonest_name varchar(15),
@@ -54,7 +54,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Most times the annual commonnest name.
-CREATE OR REPLACE FUNCTION prevalent_annual_leader(
+CREATE FUNCTION prevalent_annual_leader(
 	target_gender gender_symbol) RETURNS TABLE(name varchar(15), leaderships bigint) AS $$
 BEGIN
 	RETURN QUERY(
@@ -68,7 +68,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Names that appear every year with a minimum occurence in a period of time.
-CREATE OR REPLACE FUNCTION query_recurrent_names(
+CREATE FUNCTION query_recurrent_names(
 	min_occur integer,
 	start_year smallint,
 	end_year smallint) RETURNS TABLE(recurrent_name varchar(15)) AS $$
@@ -89,7 +89,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Find major trends in a time period.
-CREATE OR REPLACE FUNCTION query_trends(
+CREATE FUNCTION query_trends(
 	start_year smallint,
 	end_year smallint) RETURNS TABLE(trendy_name varchar(15), growth numeric) AS $$
 BEGIN
